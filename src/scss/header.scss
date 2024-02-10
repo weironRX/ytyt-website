@@ -1,0 +1,300 @@
+.header {
+    position: fixed;
+    top: 12px;
+    left: 0px;
+    width: 100vw;
+
+    // .header__container
+    &__container {
+    }
+
+    &__body {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 75px;
+
+        @include adaptive-value("padding-left", 21, 14, 1);
+        @include adaptive-value("padding-top", 10, 6, 1);
+        @include adaptive-value("padding-bottom", 10, 6, 1);
+        @include adaptive-value("padding-right", 9, 14, 1);
+    }
+
+    // .header__logo
+    &__logo {
+        
+
+        & > img {
+            @include adaptive-value("width", 53, 40, 1);
+        }
+
+        @include adaptive-value("padding-right", 73, 56, 1);
+    }
+
+    // .header__menu
+    &__menu {
+        flex: 0 1 calc(826 / 1100 * 100%);
+    }
+
+    // .header__enter-block
+    &__enter-block {
+    }
+}
+
+
+.login-button {
+    padding: 9px 16px 9px 14px;
+    border-radius: 34px;
+    background: rgb(56, 191, 242);
+
+    color: rgb(255, 255, 255);
+    font-family: Gilroy;
+    
+    @include adaptive-value("font-size", 12, 10, 1);
+
+    font-weight: 500;
+    line-height: 104.4%;
+    width: 78px;
+    letter-spacing: 0%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    transition: .3s all;
+    border: 1px solid rgb(56, 191, 242);
+
+    & > span {
+        margin-right: 2.5px;
+        color: white;
+        transition: .3s all;
+        font-size: 12px;
+    }
+
+    &:hover {
+        color: #38BFF2;
+        background-color: white;
+
+        & > span {
+            color: #38BFF2;
+        }
+    }
+
+    @media (min-width: $md + px) {
+        & {
+            margin-left: 15px;
+        }
+    }
+}
+
+.menu {
+
+    // .menu__list
+    &__list {
+        display: flex;
+    }
+
+    // .menu__item
+    &__item {
+        @include adaptive-value("padding-right", 41.1, 0, 1);
+    }
+
+    // .menu__link
+    &__link {
+        @include adaptive-value("font-size", 13, 11, 1);
+
+        color: rgb(34, 37, 59);
+        font-family: Gilroy;
+        font-weight: 400;
+        line-height: 104.4%;
+        letter-spacing: 0%;
+        text-align: center;
+        transition: .3s all;
+
+        &:hover {
+            color: #38BFF2;
+        }
+    }
+
+    &__login-button {
+        display: none;         
+    }
+
+    @media (max-width: $md + px) {
+        & {
+            position: absolute;
+            top: -12px;
+            right: -100vw;
+            background-color: rgba(34, 37, 59, 0.9);
+            width: 100vw;
+            height: 100vh;
+            transition: .5s all;
+            
+            &__body {
+                z-index: 5;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 14px;
+                right: 10px;
+                min-height: 576px;
+                @include adaptive-value("width", 300, 256, 1);
+                background-color: white;
+                border-radius: 20px;
+                padding: 25px 18px 34px 31px;
+                box-sizing: border-box;
+            }
+
+            &__list {
+                flex-direction: column;
+                display: flex;
+                flex: 1 0 auto;
+
+                @include adaptive-value("margin-top", 33, 16, 1);
+            }
+
+            &__link {
+                color: rgb(34, 37, 59);
+                font-family: Gilroy;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: left;
+            }
+
+            &__item:not(:first-child) {
+                padding-top: 20px;
+            }
+
+            &__close-button {
+                cursor: pointer;
+                width: 100%;
+                height: 14px;
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+            
+                &::before, &::after {
+                    position: absolute;
+                    content: "";
+                    background-color: #BCBCBC;
+                    border-radius: 21px;
+                    width: 14px;
+                    height: 1.38px;
+                    transition: .5s all;
+                    right: 0;
+                    bottom: 0;
+                }
+        
+                &::before {
+                    transform: rotate(-45deg);
+                }
+        
+                &::after {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &__login-button {
+                display: flex;
+                width: 132px;
+                height: 49px;
+                font-size: 15px;
+            }
+        }
+
+        &._active {
+            right: 0;
+        }
+    }
+    
+}
+.enter-block {
+    display: flex;
+    justify-content: space-between;
+
+    // .enter-block__register-btn
+    &__register-button {
+        color: rgb(60, 62, 80);
+        font-family: Gilroy;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 104.4%;
+        letter-spacing: 0%;
+        text-align: left;
+        transition: .3s all;
+        cursor: pointer;
+
+        &:hover {
+            color: #38BFF2;
+        }
+
+        @media (max-width: $md + px) {
+            & {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: $md + px) {
+        & {
+            flex: 1 0 auto;
+            justify-content: center;
+        }
+    }
+    @media (max-width: 350px) {
+        & {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.menu-icon {
+    display: none;
+
+    @media (max-width: $md + px) {
+        & {
+            display: none;
+            position: relative;
+            width: 17px;
+            height: 14px;
+        }
+
+        &::before, &::after {
+            position: absolute;
+            content: "";
+            background-color: #F15525;
+            border-radius: 21px;
+            width: 100%;
+            height: 2px;
+            transition: .5s all;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            left: 0;
+        }
+
+        & > div {
+            transition: .5s all;
+            position: absolute;
+            background-color: #F15525;
+            border-radius: 21px;
+            width: 100%;
+            height: 2px;
+
+            left: 0;
+            top: calc(50% - 1px);
+        }
+
+        & {
+            display: block;
+        }
+    }
+}

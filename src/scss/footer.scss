@@ -1,0 +1,318 @@
+.footer {
+
+    // .footer__container
+    &__container {
+        @include adaptive-value("padding-bottom", 32, 23, 1);
+    }
+
+    // .footer__main
+    &__main {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 268px 157px;
+        column-gap: 20px;
+        grid-template-areas:
+        "source menu contacts";
+
+        @media (max-width: $md + px) {
+            & {
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: 200px 1fr;
+
+                grid-template-areas:
+                "source source"
+                "menu contacts";
+            }
+        }
+
+        @media (max-width: $sm + px) {
+            & {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+
+    // .footer__source
+    &__source {
+        grid-area: source;
+    }
+
+    // .footer__menu
+    &__menu {
+        grid-area: menu;
+    }
+
+    // .footer__contacts
+    &__contacts {
+        grid-area: contacts;
+    }
+
+    // .footer__line
+    &__line {
+        border: 1px solid rgb(216, 216, 216);
+        width: 100%;
+
+        @include adaptive-value("margin-top", 46.5, 31.5, 1);
+    }
+
+    // .footer__politics
+    &__politics {
+        @include adaptive-value("margin-top", 28.5, 25.5, 1);
+
+        @media (max-width: $sm + px) {
+            & {
+                max-width: 200px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.foooter {
+
+    // .foooter__body
+    &__body {
+    }
+}
+.source-footer {
+
+    // .source-footer__title
+    &__title {
+        display: flex;
+
+        @include adaptive-value("max-width", 257, 248, 1);
+
+        & > h1 {
+            color: rgb(142, 142, 142);
+            font-family: Gilroy;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0%;
+            margin-left: 18px;
+
+            @include adaptive-value("font-size", 16, 15, 1);
+        }
+
+        & > img {
+            width: 87px;
+            height: 32px;
+        }
+    }
+
+    // .source-footer__networks
+    &__networks {
+        @include adaptive-value("margin-top", 40, 25, 1);
+
+        display: flex;
+
+        & > *:not(:first-child) {
+            margin-left: 16px;
+        }
+    }
+
+    // .source-footer__item
+    &__item {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        background: rgb(34, 37, 59);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > a > span {
+            color: rgb(255, 255, 255);;
+        }
+    }
+
+    @media (max-width: $sm + px) {
+        & {
+            display: flex; 
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+.menu-footer {
+
+    // .menu-footer__list
+    &__list {
+    }
+
+    // .menu-footer__item
+    &__item {
+        &:not(:first-child) {
+            margin-top: 25px;
+        }
+
+        @media (max-width: $sm + px) {
+            & {
+                text-align: center;
+            }
+        }
+    }
+
+    // .menu-footer__link
+    &__link {
+        color: rgb(34, 37, 59);
+        font-family: Gilroy;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 104.4%;
+        letter-spacing: 0%;
+        text-align: center;
+        transition: .3s all;
+
+        &:hover {
+            color: rgb(56, 191, 242);
+        }
+    }
+
+    @media (max-width: $sm + px) {
+        & {
+            margin-top: 43px;
+        }
+    }
+}
+.contacts-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    // .contacts-footer__main
+    &__main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .contacts-footer__phone
+    &__phone {
+        color: rgb(56, 191, 242);
+        font-family: Gilroy;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0%;
+    }
+
+    // .contacts-footer__mail
+    &__mail {
+        color: rgb(34, 37, 59);
+        font-family: Gilroy;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0%;
+    }
+
+    // .contacts-footer__data
+    &__data {
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: $sm + px) {
+            & {
+                margin-top: 35px;
+            }
+        }
+    }
+
+    // .contacts-footer__item
+    &__item {
+        color: rgb(142, 142, 142);
+        font-family: Gilroy;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0%;
+    }
+
+    @media (max-width: $sm + px) {
+        & {
+            margin-top: 43px;
+        }
+        & > * {
+            text-align: center;
+        }
+    }
+}
+.politics-footer {
+    display: flex;
+
+    // .politics-footer__title
+    &__title {
+        margin-right: 10px;
+        color: rgb(142, 142, 142);
+        font-family: Gilroy;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0%;
+        flex: 1 0 auto;
+        box-sizing: border-box;
+        
+        @media (max-width: $sm + px) {
+            & {
+                display: flex;
+                justify-content: center;
+                margin-top: 25.5px;
+                text-align: center;
+            }
+        }
+    }
+
+    // .politics-footer__list
+    &__list {
+        display: flex;
+
+        @media (min-width: $sm + px) {
+            & > *:not(:first-child) {
+                @include adaptive-value("margin-left", 64, 20, 1);
+            }
+        }
+
+        @media (max-width: $sm + px) {
+            & {
+                flex-direction: column;
+                align-items: center;
+            }
+            & > *:not(:first-child) {
+                margin-top: 12px;
+            }
+        }
+    }
+
+    // .politics-footer__item
+    &__item {
+        color: rgb(142, 142, 142);
+        font-family: Gilroy;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0%;
+        text-align: center;
+        transition: .5s all;
+        width: 100%;
+        display: inline-block;
+
+        @media (max-width: $sm + px) {
+            & {
+                color: rgb(241, 85, 37);
+            }
+        }
+    }
+
+    @media (max-width: $md + px) {
+        & {
+            display: block;
+        }
+        &__list {
+            margin: 13px 0 0 0;
+        }
+    }
+
+}
+
