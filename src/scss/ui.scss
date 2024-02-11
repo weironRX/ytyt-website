@@ -1,0 +1,50 @@
+@import "./settings.scss";
+
+.button-orange {
+    cursor: pointer;
+    padding: 27px 45px 27px 44px;
+    background-color: #F15525;
+    border-radius: 82px;
+
+    color: $whiteColor;
+    font-family: Gilroy;
+    font-weight: 400;
+    line-height: 96.69%;
+    letter-spacing: -3%; 
+    text-align: center;
+    border: 1px solid $orangeColor;
+    transition: .3s all;
+
+    & > span {
+        margin-left: 12px;
+        color: $whiteColor;
+        transition: .3s all;
+
+        font-size: 13px;
+    }
+ 
+    @include adaptive-value("padding-left", 44, 35, 1);
+    @include adaptive-value("font-size", 20, 18, 1);
+
+    &:hover {
+        background-color: $whiteColor;
+        color: $orangeColor;
+
+        & > span {
+            color: $orangeColor;
+        }
+    }
+}
+
+._title {
+    color: rgb(34, 37, 59);
+    font-family: Gilroy;
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 46px;
+    letter-spacing: 0%;
+    text-align: center;
+
+    @include adaptive-value("font-size", 46, 24, 1);
+    @include adaptive-value("line-height", 46, 26, 1);
+}

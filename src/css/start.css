@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.wave {
+  --c:red; /* Цвет */
+  --t:5px; /* Толщина */
+  --h:50px; /* Высота (расстояние по вертикали между двумя кривыми) */
+  --w:120px; /* Ширина  */
+  --p:13px; /* отрегулируйте это, чтобы исправить положение при изменении других значений*/
+  background: radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)), transparent calc(52% + var(--t))), radial-gradient(farthest-side at 50% calc(0% - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)), transparent calc(52% + var(--t)));
+  background-size: var(--w) var(--h);
+  background-position: calc(var(--w) / 2) calc(var(--h) / 2), 0px calc(var(--h) / 2);
+  border: 1px solid;
+  margin: 5px 0;
+  display: inline-block;
+  width: 300px;
+  height: 150px;
+}
