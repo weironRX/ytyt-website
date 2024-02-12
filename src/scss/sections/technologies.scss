@@ -2,6 +2,9 @@
 
 .technologies {
     background-color: $whiteColor;
+    z-index: 5;
+    position: relative;
+    background-color: #FFF;
 
     // .technologies__container
     &__container {

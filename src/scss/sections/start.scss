@@ -2,6 +2,7 @@
 
 .start-block {
     position: relative;
+    z-index: 2;
 
     // .start-block__container
     &__container {
@@ -42,6 +43,7 @@
     // .start-block__body
     &__body {
         max-width: 638px;
+        z-index: 2;
 
         @media (max-width: $xl + px) {
             & {
@@ -63,6 +65,7 @@
         line-height: 46px;
         letter-spacing: 0%;
         text-align: left;
+        z-index: 2;
 
         & > strong {
             &::before, &::after {
@@ -89,6 +92,7 @@
 
     &__details {
         max-width: 365px;
+        z-index: 2;
 
         @media (max-width: $md + px) {
             & {
@@ -106,6 +110,7 @@
     &__line {
         border: 1px solid rgb(222, 222, 222);
         width: 100%;
+        z-index: 2;
         
         @include adaptive-value("margin-top", 30, 17.5, 1);
     }
@@ -118,6 +123,7 @@
         font-weight: 400;
         line-height: 23px;
         letter-spacing: 0%;
+        z-index: 2;
 
         @include adaptive-value("font-size", 16, 12, 1);
         @include adaptive-value("line-height", 23, 18, 1);
@@ -140,12 +146,12 @@
         position: absolute;
         right: -920px;
         top: -580px;
-        z-index: -1;
+        z-index: 1;
 
         @media (max-width: $md + px) {
             & {
                 left: calc(50vw - 934px);
-                top: calc(50vh - 750px);
+                top: calc(50% - 780px);
                 transform: scale(0.53);
             }
         }
@@ -153,7 +159,7 @@
         @media (max-width: $sm + px) {
             & {
                 left: calc(50vw - 934px);
-                top: calc(50vh - 770px);
+                top: calc(50% - 790px);
                 transform: scale(0.53);
             }
         }
@@ -163,12 +169,12 @@
         position: absolute;
         top: 132px;
         right: 10px;
-        z-index: -1;
+        z-index: 1;
 
         @media (max-width: $md + px) {
             & {
-                left: calc(50vw - 190px);
-                top: calc(50vh + -8px);
+                left: calc(50% - 190px);
+                top: calc(50vh - 320px);
                 transform: scale(0.55);
             }
         }
@@ -176,7 +182,7 @@
         @media (max-width: $sm + px) {
             & {
                 left: calc(50vw - 190px);
-                top: calc(50vh - 22px);
+                top: calc(50% - 42px);
                 transform: scale(0.55);
             }
         }
@@ -227,6 +233,10 @@
             & {
                 height: 35px;
             }
+        }
+
+        & > img {
+            z-index: 2;
         }
     }
 }

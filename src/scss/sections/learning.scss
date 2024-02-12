@@ -1,0 +1,121 @@
+@import "./../tools.scss";
+@import "./../settings.scss";
+
+.card-learning {
+    z-index: 5;
+
+    // .card-learning__image
+    &__image {
+        
+    }
+
+    // .card-learning__title
+
+    &__title {
+        color: rgb(34, 37, 59);
+        font-family: Gilroy;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 18.5px;
+        letter-spacing: 0%;
+        text-align: center;
+
+        @include adaptive-value("font-size", 16, 12, 1);
+        @include adaptive-value("line-height", 18.5, 12, 1);
+        @include adaptive-value("margin-top", 19, 11, 1);
+    }
+
+    // .card-learning__text
+    &__text {
+        color: rgb(34, 37, 59);
+        font-family: Gilroy;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0%;
+        text-align: center;
+
+        @include adaptive-value("font-size", 13, 9, 1);
+        @include adaptive-value("line-height", 15, 12, 1);
+        @include adaptive-value("margin-top", 10, 4, 1);
+    }
+}
+
+.learning {
+    z-index: 5;
+    position: relative;
+    background-color: #FFF;
+    border-radius: 0 0 40px 40px;
+
+    // .learning__container
+    &__container {
+        @include adaptive-value("padding-top", 84, 58, 1);
+        @include adaptive-value("padding-bottom", 87, 12, 1);
+    }
+
+    // .learning__title
+    &__title {
+    }
+
+    // .learning__body
+    &__body {
+        --columns:4;
+        --gap:27px;
+        --gap-count: calc(var(--columns) - 1 );
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap: var(--gap);
+
+        display: flex;
+        flex-wrap: wrap;
+
+        @include adaptive-value("margin-top", 34, 24, 1);
+
+        @media (max-width: $md + px) {
+            & {
+                --columns: 3;
+                --gap: 16px;
+            }
+        }
+        @media (max-width: $sm + px) {
+            & {
+                --columns: 2;
+                --gap: 10px;
+
+                & > *:last-child {
+                    flex: 0 0 100%;
+                    display: flex;
+
+                    padding: 19px 47px 19px 45px;
+
+                    & > * > * {
+                        text-align: left;
+                    }
+
+                    & > div {
+                        margin-left: 17px;
+                    }
+                }
+
+                & > div > img {
+                    scale: 0.70;
+                }
+            }
+        }
+    }
+
+    // .learning__card
+    &__card {
+        background-color: #EAF2F5;
+        border-radius: 30px;
+        flex-basis: calc(calc(100% / var(--columns)) - calc(var(--gap) / var(--columns) * var(--gap-count)));
+        text-align: center;
+        box-sizing: border-box;
+
+        @include adaptive-value("padding-top", 51, 22, 1);
+        @include adaptive-value("padding-bottom", 31, 23, 1);
+        @include adaptive-value("padding-left", 35, 20, 1);
+        @include adaptive-value("padding-right", 35, 20, 1);
+    }
+}

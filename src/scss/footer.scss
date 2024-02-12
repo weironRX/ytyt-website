@@ -1,8 +1,11 @@
 .footer {
+    position: relative;
+    z-index: 5;
 
     // .footer__container
     &__container {
         @include adaptive-value("padding-bottom", 32, 23, 1);
+        @include adaptive-value("padding-top", 63, 40, 1);
     }
 
     // .footer__main
